@@ -1,0 +1,12 @@
+@use "/src/preset/variables" as preset;
+@use "sass:meta";
+@use "sass:map";
+
+$variables: (
+  font-size-root: 2rem,
+);
+
+@include meta.load-css(
+  "vuetify/settings",
+  $with: map.deep-merge(preset.$variables, $variables)
+);
